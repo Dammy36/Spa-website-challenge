@@ -3,27 +3,32 @@ html {
 }
 
 :root {
-  --color-body: #e7cdcc;
+  --color-body: #f3eded;
   --text-shodow: 2px 2px 0 #000;
+  --color-heading: #1b0760;
+  --color-nav: #5eb7c0;
 }
 * {
   box-sizing: border-box;
 }
+h2,
+h3 {
+  font-size: 4rem;
+  color: var(--color-nav);
+}
+a {
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
 body {
-  background: var(--color-body);
+  background-color: var(--color-body);
   font-family: "Roboto", sans-serif;
 }
-header {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/088/386/original/pexels-delbeautybox-853427.jpg?1688569801);
-  height: 100vh;
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
+.bar {
+  padding: 2rem;
+  box-shadow: 0 0 20px 5px #eeebeb;
 }
-
 nav ul {
   display: flex;
   flex-direction: row;
@@ -36,9 +41,7 @@ nav li {
   font-size: 1.5rem;
 }
 nav li a {
-  text-decoration: none;
-  color: black;
-  text-transform: capitalize;
+  color: var(--color-nav);
 }
 
 nav li a:hover {
@@ -48,7 +51,19 @@ nav li a:hover {
   border: 1 solid;
   padding: 0.5rem 1.5rem;
   background-color: var(--color-body);
+  transform: scale(1.5);
 }
+
+header {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/088/386/original/pexels-delbeautybox-853427.jpg?1688569801);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .hero {
   text-align: center;
   color: #fff;
@@ -62,6 +77,8 @@ nav li a:hover {
   word-spacing: 0.3rem;
   line-height: 1.2;
   margin: 3rem 0;
+  animation: bounce;
+  animation-duration: 3s;
 }
 .hero p {
   word-spacing: 0.5rem;
@@ -82,36 +99,231 @@ nav li a:hover {
   text-transform: capitalize;
   font-weight: 500;
   font-size: 1.5rem;
-  transition: all 150ms ease-in-out;
 }
 
 .hero button:hover {
   box-shadow: 0 0 15px 20px #f9f9f9;
-  transform: rotate(0);
+  transform: rotate(10deg);
+  transition: all 150ms ease-in-out;
 }
 
 h2 {
-  font-size: 4rem;
-  color: #fff;
-  text-shadow: var(--text-shodow);
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 4rem;
+  animation: heartBeat;
+  animation-delay: 1s;
+  animation-duration: 5s;
 }
-.img-fluid {
+/*.img-fluid {
   border-radius: 50px;
   width: 100%;
   height: 100%;
   background-size: cover;
-  padding: 2rem;
 }
+
+.img-fluid:hover {
+  transform: perspective(200px) translateZ(-50px);
+}*/
+
+.container-image .grid-item {
+  position: relative;
+}
+
+.container-image .grid-item::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.container-image .grid-item img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-fluid-2,
+.grid--img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0.8rem;
+  object-fit: cover;
+  border-radius: 4rem;
+}
+.grid--img {
+  border-radius: 80%;
+  height: 80%;
+}
+.grid--img:hover {
+  animation: fadeOut;
+  animation-duration: 5s;
+  animation-delay: 1s;
+  cursor: pointer;
+}
+.text {
+  font-family: "Jost", sans-serif;
+  font-weight: 500;
+  margin: 4rem;
+}
+
+.text h4 {
+  font-size: 2.5rem;
+  line-height: 2;
+  color: #8e8e8e;
+}
+
+.text p {
+  line-height: 2;
+  font-weight: 300;
+  font-size: 1.5rem;
+  font-family: "Work Sans", sans-serif;
+  color: #7a7a7a;
+}
+
+.btn-outline {
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 3rem;
+  background: #fff;
+  border: 1px solid var(--color-nav);
+  white-space: nowrap;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  cursor: pointer;
+  margin: 2rem;
+  text-align: center;
+}
+
+.btn-outline a {
+  color: var(--color-nav);
+}
+
+.btn-outline:hover {
+  background: var(--color-nav);
+  transition: transform 0.3s;
+  color: #fff;
+}
+.btn-outline a:hover {
+  color: #fff;
+}
+
+.card {
+  border-radius: 7px;
+  box-shadow: 0 0 20px 10px #f3f3f3;
+  overflow: hidden;
+  margin-top: 5rem;
+}
+
+.card__section .card__body {
+  padding: 2rem 3rem;
+}
+.card__section .card__header {
+  background-color: rgb(241, 115, 115);
+  color: #fff;
+}
+
+.card__header .plan__name {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+.card__header .plan__price {
+  font-size: 6rem;
+}
+.plan__billing-cycle {
+  font-size: 2.4rem;
+  font-weight: 300;
+  opacity: 0.8;
+  margin-left: 1rem;
+}
+.plan__description {
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  display: block;
+}
+.badge--small {
+  font-size: 1.6rem;
+  padding: 0.5rem 1.5rem;
+  white-space: nowrap;
+  border-radius: 20px;
+  background-color: rgb(238, 72, 72);
+  color: #fff;
+}
+.list {
+  list-style: none;
+  padding-left: 0;
+  color: var(--color-nav);
+}
+.list__item .fa-check {
+  display: inline-block;
+  margin: 2rem;
+}
+.list__item {
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+.fa-check {
+  font-size: 1.5rem;
+}
+.btn {
+  margin: 1rem 0;
+  padding: 2rem 3rem;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-family: 600;
+  border: 0;
+  cursor: pointer;
+  overflow: hidden;
+  text-align: center;
+}
+
+.btn--block {
+  width: 100%;
+  display: inline-block;
+}
+
+.btn--outline {
+  background: rgb(238, 72, 72);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+}
+
+.btn--outline:hover {
+  background: rgb(240, 116, 116);
+  color: #fff;
+}
+
 .grid {
   display: grid;
 }
 
+section h2 {
+  font-size: 4rem;
+}
+
+.gallery {
+  display: grid;
+  grid-gap: 10px;
+}
+
+.gallery img {
+  object-fit: cover;
+  width: 100%;
+  border-radius: 5px;
+}
 @media screen and (min-width: 1024px) {
   nav li {
     font-size: 2rem;
   }
+
   .hero {
     padding: 10rem;
   }
@@ -131,7 +343,53 @@ h2 {
     font-size: 2rem;
   }
 
+  .text {
+    margin: 0;
+    padding: 5rem;
+  }
+  .text p {
+    font-size: 2rem;
+  }
+
+  .badge--small {
+    font-size: 1.2rem;
+  }
+
+  .plan__name {
+    font-size: 1.4rem;
+  }
+  .plan__price {
+    font-size: 5rem;
+  }
+  .plan__billing-cycle {
+    font-size: 1.6rem;
+  }
+
+  .plan__name,
+  .plan__price,
+  .plan__billing-cycle,
+  .plan__description {
+    margin: 20px;
+  }
+  .btn {
+    font-size: 1.5rem;
+  }
+  .grid--1x5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
   .grid--1x2 {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .grid--1x3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
+    margin: 40px;
+  }
+  .gallery img:hover {
+    transform: perspective(200px) translateZ(30px);
   }
 }
