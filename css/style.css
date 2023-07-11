@@ -114,27 +114,36 @@ h2 {
   animation-delay: 1s;
   animation-duration: 5s;
 }
-/*.img-fluid {
+.grid-item {
+  position: relative;
+  display: grid;
+}
+.img-fluid {
   border-radius: 50px;
   width: 100%;
   height: 100%;
   background-size: cover;
+  background-position: center;
+  background-image: linear-gradient(
+    to bottom rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.6)
+  );
 }
 
-.img-fluid:hover {
+/*.img-fluid:hover {
   transform: perspective(200px) translateZ(-50px);
-}*/
-
-.container-image .grid-item {
-  position: relative;
 }
 
 .container-image .grid-item::before {
   content: "";
   position: absolute;
   width: 100%;
-  height: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+  height: auto;
+  background-image: linear-gradient(
+    to bottom rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.6)
+  );
+
   background-size: cover;
   background-position: center;
   z-index: -1;
@@ -142,10 +151,33 @@ h2 {
 
 .container-image .grid-item img {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+}
+
+.grid-item {
+  position: relative;
+  display: grid;
+}*/
+
+.image-caption {
+  position: absolute;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  color: #fff;
+  padding: 10px;
+  margin: 20px;
+  top: 20px;
+  border-radius: 5px;
+  right: 100px;
+  text-transform: capitalize;
+}
+
+.image-caption h3 {
+  font-size: 15px;
 }
 
 .img-fluid-2,
@@ -188,11 +220,9 @@ h2 {
 }
 
 .btn-outline {
-  border: none;
   padding: 1rem 2rem;
   border-radius: 3rem;
   background: #fff;
-  border: 1px solid var(--color-nav);
   white-space: nowrap;
   font-size: 1.5rem;
   text-transform: capitalize;
@@ -341,6 +371,9 @@ section h2 {
   }
   .hero button a {
     font-size: 2rem;
+  }
+  .image-caption {
+    right: -50px;
   }
 
   .text {
