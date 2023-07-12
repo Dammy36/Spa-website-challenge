@@ -7,6 +7,7 @@ html {
   --text-shodow: 2px 2px 0 #000;
   --color-heading: #1b0760;
   --color-nav: #5eb7c0;
+  --text-color: #8e8e8e;
 }
 * {
   box-sizing: border-box;
@@ -24,6 +25,8 @@ a {
 body {
   background-color: var(--color-body);
   font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 .bar {
   padding: 2rem;
@@ -32,7 +35,8 @@ body {
 nav ul {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
+
   list-style: none;
   height: 2rem;
 }
@@ -71,6 +75,7 @@ header {
   padding: 7rem;
 }
 .hero h1 {
+  font-family: "work san", sans-serif;
   font-size: 6rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -107,17 +112,54 @@ header {
   transition: all 150ms ease-in-out;
 }
 
-h2 {
-  text-align: center;
-  margin-top: 4rem;
-  animation: heartBeat;
-  animation-delay: 1s;
-  animation-duration: 5s;
+.text-designs {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--color-nav);
+  line-height: 4;
+  text-transform: uppercase;
 }
+.text-designs p {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-transform: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.text--pro {
+  font-size: 2rem;
+  text-align: center;
+}
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px;
+  margin-top: 5rem;
+}
+.fa-solid {
+  font-size: 30px;
+  color: var(--color-nav);
+  margin: 10px;
+}
+.icon-text {
+  font-size: 20px;
+  padding: 1rem;
+  line-height: 1.5;
+  font-family: bold;
+  color: #bcbdbe;
+  text-transform: capitalize;
+}
+.icon-text p {
+  font-size: 10px;
+  color: #282545;
+  text-transform: uppercase;
+}
+
 .grid-item {
   position: relative;
   display: grid;
 }
+
 .img-fluid {
   border-radius: 50px;
   width: 100%;
@@ -130,37 +172,6 @@ h2 {
   );
 }
 
-/*.img-fluid:hover {
-  transform: perspective(200px) translateZ(-50px);
-}
-
-.container-image .grid-item::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: auto;
-  background-image: linear-gradient(
-    to bottom rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.6)
-  );
-
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
-}
-
-.container-image .grid-item img {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-}
-
-.grid-item {
-  position: relative;
-  display: grid;
-}*/
-
 .image-caption {
   position: absolute;
   align-items: center;
@@ -168,9 +179,9 @@ h2 {
   background-color: rgba(0, 0, 0, 0.7);
   text-align: center;
   color: #fff;
-  padding: 10px;
-  margin: 20px;
-  top: 20px;
+  padding: 1rem;
+  margin: 2rem;
+  top: 2rem;
   border-radius: 5px;
   right: 100px;
   text-transform: capitalize;
@@ -178,6 +189,11 @@ h2 {
 
 .image-caption h3 {
   font-size: 15px;
+}
+.image-caption:hover {
+  animation: bounceInDown;
+  animation-duration: 3s;
+  animation-delay: 1s;
 }
 
 .img-fluid-2,
@@ -189,6 +205,21 @@ h2 {
   object-fit: cover;
   border-radius: 4rem;
 }
+.card-body {
+  box-shadow: 5px 10px 30px rgb(85 85 85 /20%);
+}
+.card-title {
+  font-size: 2rem;
+  color: var(--text-color);
+}
+.card-text {
+  font-size: 1.2rem;
+}
+.btn-info {
+  background-color: var(--color-nav);
+  color: #fff;
+  border-radius: 2rem;
+}
 .grid--img {
   border-radius: 80%;
   height: 80%;
@@ -199,16 +230,17 @@ h2 {
   animation-delay: 1s;
   cursor: pointer;
 }
-.text {
+.text h3 {
   font-family: "Jost", sans-serif;
   font-weight: 500;
   margin: 4rem;
+  font-size: 3.5rem;
 }
 
 .text h4 {
   font-size: 2.5rem;
   line-height: 2;
-  color: #8e8e8e;
+  color: var(--text-color);
 }
 
 .text p {
@@ -248,14 +280,13 @@ h2 {
   border-radius: 7px;
   box-shadow: 0 0 20px 10px #f3f3f3;
   overflow: hidden;
-  margin-top: 5rem;
 }
 
 .card__section .card__body {
   padding: 2rem 3rem;
 }
 .card__section .card__header {
-  background-color: rgb(241, 115, 115);
+  background-color: var(--color-nav);
   color: #fff;
 }
 
@@ -300,12 +331,12 @@ h2 {
   text-transform: capitalize;
 }
 .fa-check {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 .btn {
   margin: 1rem 0;
   padding: 2rem 3rem;
-  font-size: 1.8rem;
+  font-size: 2rem;
   text-transform: uppercase;
   font-family: 600;
   border: 0;
@@ -315,33 +346,30 @@ h2 {
 }
 
 .btn--block {
-  width: 100%;
+  width: 50%;
   display: inline-block;
 }
 
 .btn--outline {
-  background: rgb(238, 72, 72);
+  background: var(--color-nav);
   color: #fff;
   border: none;
   border-radius: 50px;
 }
 
 .btn--outline:hover {
-  background: rgb(240, 116, 116);
+  background: rgb(223, 44, 44);
   color: #fff;
 }
 
-.grid {
+.grid,
+.gallery {
   display: grid;
+  gap: 10px;
 }
 
 section h2 {
   font-size: 4rem;
-}
-
-.gallery {
-  display: grid;
-  grid-gap: 10px;
 }
 
 .gallery img {
@@ -372,13 +400,30 @@ section h2 {
   .hero button a {
     font-size: 2rem;
   }
+  .icons {
+    justify-content: space-around;
+    margin-top: 10rem;
+  }
+  .fa-solid {
+    font-size: 40px;
+  }
+  .icon-text {
+    line-height: 2;
+  }
+  .icon-text p {
+    font-size: 15px;
+  }
+
   .image-caption {
     right: -50px;
   }
-
-  .text {
+  .text-designs {
+    font-size: 3rem;
+  }
+  .text h3 {
     margin: 0;
     padding: 5rem;
+    font-size: 4rem;
   }
   .text p {
     font-size: 2rem;
@@ -402,10 +447,10 @@ section h2 {
   .plan__price,
   .plan__billing-cycle,
   .plan__description {
-    margin: 20px;
+    margin: 15px;
   }
   .btn {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   .grid--1x5 {
     grid-template-columns: repeat(5, 1fr);
