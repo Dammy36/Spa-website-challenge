@@ -312,6 +312,12 @@ header {
   text-decoration: underline;
   line-height: 1.5;
 }
+.click {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  color: var(--color-nav);
+}
 
 .btn--outline2 {
   background: var(--color-nav);
@@ -353,26 +359,25 @@ h5 {
 }
 .footer-text p {
   font-size: 1.5rem;
-  display: flex;
-  flex-direction: column;
+  cursor: pointer;
+}
+.footer-text p:hover {
+  animation: bounce;
+  animation-duration: 2s;
 }
 
 .fa-brands {
   font-size: 20px;
-  display: block;
-  display: flex;
-  align-items: center;
   padding: 1rem;
+  margin: 0;
 }
 .fa-brands:hover {
   cursor: pointer;
-  display: inline-block;
-  margin: 0.05rem;
   animation: flash;
-  animation-duration: 2s;
+  animation-duration: 1s;
 }
 .footer-content {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   line-height: 1.5;
   word-spacing: normal;
 }
@@ -393,7 +398,12 @@ h5 {
 .fa-youtube {
   color: #ef1c02;
 }
-
+.small-text {
+  font-size: 13px;
+}
+.small-text a:hover {
+  text-decoration: underline;
+}
 @media (min-width: 900px) {
   nav li {
     font-size: 2rem;
