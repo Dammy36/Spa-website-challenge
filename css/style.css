@@ -1,12 +1,14 @@
 html {
   font-size: 62.5%;
 }
-
+* {
+  box-sizing: border-box;
+}
 :root {
   --color-body: #f3eded;
   --text-shodow: 2px 2px 0 #000;
   --color-heading: #1b0760;
-  --color-nav: #5eb7c0;
+  --color-nav: rgb(80, 5, 77);
   --text-color: #8e8e8e;
 }
 
@@ -14,6 +16,7 @@ h2,
 h3 {
   font-size: 4rem;
   color: var(--color-nav);
+  font-weight: 500;
 }
 a {
   text-decoration: none;
@@ -336,7 +339,62 @@ section h2 {
   width: 100%;
   border-radius: 2rem;
 }
-@media screen and (min-width: 1024px) {
+footer {
+  background: rgb(219, 146, 216);
+  color: var(--color-nav);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 300;
+}
+
+h5 {
+  font-size: 2rem;
+  text-transform: capitalize;
+  line-height: 3;
+}
+.footer-text p {
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.fa-brands {
+  font-size: 20px;
+  display: block;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+.fa-brands:hover {
+  cursor: pointer;
+  display: inline-block;
+  margin: 0.05rem;
+  animation: flash;
+  animation-duration: 2s;
+}
+.footer-content {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  word-spacing: normal;
+}
+
+.icon-styles {
+  font-size: 8px;
+  margin: 1rem;
+}
+.fa-tiktok {
+  color: #1b0760;
+}
+.fa-facebook,
+.fa-twitter {
+  color: #1877f2;
+}
+.fa-instagram,
+.fa-pinterest,
+.fa-youtube {
+  color: #ef1c02;
+}
+
+@media (min-width: 900px) {
   nav li {
     font-size: 2rem;
   }
