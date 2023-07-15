@@ -62,7 +62,7 @@ nav li a:hover {
 header {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/088/386/original/pexels-delbeautybox-853427.jpg?1688569801);
-  height: 100vh;
+  height: 130vh;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -70,21 +70,25 @@ header {
 }
 
 .hero {
-  text-align: center;
   color: #fff;
   text-shadow: var(--text-shodow);
   padding: 7rem;
 }
 .hero h1 {
   font-family: "work san", sans-serif;
-  font-size: 6rem;
+  font-size: 5rem;
   font-weight: 700;
-  text-transform: uppercase;
+  text-transform: capitalize;
   word-spacing: 0.3rem;
   line-height: 1.2;
   margin: 3rem 0;
   animation: bounce;
   animation-duration: 3s;
+}
+.hero h2 {
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 3rem;
 }
 .hero p {
   word-spacing: 0.5rem;
@@ -110,7 +114,12 @@ header {
 .hero button:hover {
   box-shadow: 0 0 15px 20px #f9f9f9;
   transform: rotate(10deg);
-  transition: all 150ms ease-in-out;
+}
+.hero--image {
+  border-radius: 100%;
+  background-color: #fff;
+  object-fit: cover;
+  margin: 5rem;
 }
 .icons {
   display: flex;
