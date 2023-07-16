@@ -318,7 +318,7 @@ header {
   text-decoration: underline;
   line-height: 1.5;
 }
-.click {
+.click-here {
   display: flex;
   justify-content: end;
   align-items: end;

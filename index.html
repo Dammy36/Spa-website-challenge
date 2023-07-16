@@ -354,7 +354,7 @@ https://s3.amazonaws.com/shecodesio-production/uploads/files/000/088/395/origina
                 skin conditions such as acne, eczema, burn, or insect bite. It
                 alleviates wrinkles hence improves skin appearance.
               </p>
-              <a class="click" href="#"> Click Here</a>
+              <a class="click-here" href="#"> Click Here</a>
             </div>
           </div>
         </div>
@@ -422,5 +422,13 @@ https://s3.amazonaws.com/shecodesio-production/uploads/files/000/088/395/origina
         >
       </small>
     </footer>
+    <script>
+      function buy() {
+        let name = prompt("what is your name");
+        alert("Welcome " + name + "! Book Your Apointment");
+      }
+      let clickHere = document.querySelector(".click-here");
+      clickHere.addEventListener("click", buy);
+    </script>
   </body>
 </html>
