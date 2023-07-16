@@ -29,24 +29,20 @@ body {
   margin: 0;
   padding: 0;
 }
-.bar {
-  padding: 2rem;
-  box-shadow: 0 0 20px 5px #eeebeb;
-}
-nav ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
 
-  list-style: none;
-  height: 2rem;
+nav {
+  display: flex;
+  justify-content: space-between;
 }
 
 nav li {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
-nav li a {
-  color: var(--color-nav);
+.nav-link {
+  color: var(--color-nav) !important;
+}
+.nav-item {
+  padding: 0 30px;
 }
 
 nav li a:hover {
@@ -62,7 +58,7 @@ nav li a:hover {
 header {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(https://s3.amazonaws.com/shecodesio-production/uploads/files/000/088/386/original/pexels-delbeautybox-853427.jpg?1688569801);
-  height: 130vh;
+  height: 100vh;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -81,14 +77,15 @@ header {
   text-transform: capitalize;
   word-spacing: 0.3rem;
   line-height: 1.2;
-  margin: 3rem 0;
+
   animation: bounce;
   animation-duration: 3s;
 }
 .hero h2 {
   color: #fff;
+  font-weight: 300;
   text-transform: capitalize;
-  font-size: 3rem;
+  font-size: 1.8rem;
 }
 .hero p {
   word-spacing: 0.5rem;
